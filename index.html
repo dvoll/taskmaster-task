@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dein erster Task</title>
+        <link rel="stylesheet" href="/dist/style.css" />
+        <!-- <script src="index.js" type="module"></script> -->
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body class="h-full flex justify-center items-center">
+        <div
+            x-data="{open: false}"
+            x-bind:class="open ? 'open' : ''"
+            x-on:click="open = true"
+            class="letter"
+        >
+            <div class="shadow"></div>
+            <div class="inner"></div>
+            <div class="bottom-shadow"></div>
+            <div class="bottom">
+                <div class="bottom-outer"></div>
+                <div
+                    class="bottom-inner"
+                    style="transform: rotateX(180deg)"
+                ></div>
+            </div>
+            <div class="top-shadow"></div>
+            <div class="top">
+                <div class="top-outer"></div>
+                <div
+                    class="top-inner"
+                    style="transform: rotateX(180deg)"
+                    Text
+                ></div>
+            </div>
+        </div>
+    </body>
+</html>

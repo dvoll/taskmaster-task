@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    height: 100%;
+}
+
+.letter {
+    perspective: 1600px;
+    display: grid;
+    aspect-ratio: 2/1;
+    padding-inline: 4rem;
+    width: 100%;
+    grid-template: "main" 1fr/1fr;
+}
+
+.letter > * {
+    grid-area: main;
+}
+
+.shadow {
+    opacity: 1;
+    transition: opacity 1.2s;
+}
+
+.inner {
+    background: #F2E3D2;
+}
+
+.bottom, .top {
+    transition: transform 2s ;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+.top {
+    height: 60%;
+    z-index: 15;
+}
+
+.bottom {
+    height: 60%;
+    align-self: end;
+}
+
+.top-shadow, .bottom-shadow {
+    height: calc(60% + 2px);
+    background: #D4B99C;
+    opacity: 45%;
+    position: relative;
+    z-index: 1;
+}
+
+/* .top-shadow {
+
+} */
+
+.bottom-shadow {
+    align-self: end;
+}
+
+.bottom > *, .top > * {
+    backface-visibility: hidden;
+}
+
+.bottom-outer, .top-outer {
+    background: #F8F0E7;
+    position: absolute;
+    inset: 0;
+}
+
+.bottom-inner, .top-inner {
+    background: #F2E3D2;
+    position: absolute;
+    inset: 0;
+}
+
+.open > .bottom {
+    transform-origin: 50% 100%;
+    transform: rotateX(180deg); /* translateY(100%); */
+}
+
+.open > .top {
+    transform-origin: 50% 0%;
+    transform: rotateX(-180deg); /* translateY(-100%); */
+}
+
+.open > .shadow {
+    opacity: 0;
+}
